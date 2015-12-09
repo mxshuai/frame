@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"  content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>标题</title>
+    <link href="static/css/style.styl" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<h1>项目规范目录组织结构</h1>
+<div class="nav"><ul><li><a href="#"> 菜单000</a></li><ul><li><a href="#module/book"> 菜单一</a></li><li><a href="#at/m/a/name:moduleA/other:nothing"> 菜单二</a></li></ul></div>
+<div class="content" >内容1</div>
+<div  id="container"></div>
+
+</body>
+
+<script src="static/libs/seajs.js"></script>
+<script src="static/libs/seajs-text.js"></script>
+
+<script>
+    // seajs 的简单配置
+    seajs.config({
+        base: "./static/libs/",
+        alias: {
+            "jquery": "jquery-2.0.1.min.js",
+            "backbone": "backbone.js",
+            "underscore": "underscore-min.js"
+        },
+    //preload: ['js/seajs-text'],
+    /*    map: [
+            ['.tpl', '.tpl?201304261457'],
+            ['.js', '.js?201304261457']
+        ]*/
+    })
+
+    // 加载入口模块
+    seajs.use('./app', function(app) {
+        app.run();
+    });
+   // seajs.use('./index/controller');
+
+</script>
+</html>
